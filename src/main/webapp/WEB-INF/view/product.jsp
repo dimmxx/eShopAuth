@@ -45,8 +45,10 @@
             <td width="110"></td>
             <td width="50"></td>
             <td style="text-align: center" width="200">
-                <form action="./CartServlet" method="post">
+                <form action="./CartServletMulti" method="post">
                     <input type="hidden" name="productId" value="${product.id}">
+                    <input type="hidden" name="productQuantity" value="1">
+                    <input type="hidden" name="quickBuy" value="true">
                     <input type="submit" value="Quick buy" style="height:30px; width:130px"/>
                 </form>
             </td>

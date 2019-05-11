@@ -23,7 +23,7 @@ function buy(id) {
     $.ajax({
         url: "./CartServletMulti",
         type: "POST",
-        data: {productId: productId, quantity: productQuantity},
+        data: {productId: productId, productQuantity: productQuantity},
         dataType: "html", success: function (html) {
             location.reload();
         }

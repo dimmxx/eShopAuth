@@ -18,6 +18,8 @@ public class CartServletMulti extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        //edit product quantity from the cart
+
         String productId = req.getParameter("productId");
         String productQuantity = req.getParameter("productQuantity");
         Boolean changeQuantity = Boolean.valueOf(req.getParameter("changeQuantity"));
@@ -43,9 +45,12 @@ public class CartServletMulti extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        //add product from the products
+
         Cart cart = null;
         String productId = req.getParameter("productId");
-        String quantity = req.getParameter("quantity");
+        String productQuantity = req.getParameter("productQuantity");
         HttpSession session = req.getSession();
         if (session.getAttribute("cart") == null){
             cart = new Cart();
@@ -54,13 +59,16 @@ public class CartServletMulti extends HttpServlet {
         }
         CartController cartController = new CartController(cart);
 
-        if (productId != null && quantity != null) {
+        if (productId != null && productQuantity != null) {
             DbWorker db = new DbWorker();
             ProductController productController = new ProductController(db);
             Product product = productController.getProduct(Integer.valueOf(productId));
-            cartController.addProductToCartMap(product, Integer.valueOf(quantity));
+            cartController.addProductToCartMap(product, Integer.valueOf(productQuantity));
             session.setAttribute("cart", cartController.getCart());
         }
+
+        Boolean quickBuy = Boolean.valueOf(req.getParameter("quickBuy"));
+        if(quickBuy) resp.sendRedirect("./CartServlet");
 
     }
 }
