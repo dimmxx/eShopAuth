@@ -39,9 +39,9 @@ public class CartServlet extends HttpServlet {
             session.setAttribute("cart", cartController.getCart());
         }
 
-        resp.sendRedirect("./CartServlet");
-       //RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/view/cartView2.jsp");
-       //rd.forward(req, resp);
+        //resp.sendRedirect("./CartServlet");
+       RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/view/cartView2.jsp");
+       rd.forward(req, resp);
 
     }
 
