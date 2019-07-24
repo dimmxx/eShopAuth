@@ -1,6 +1,7 @@
 package servlet;
 
 import controller.DbWorker;
+import controller.HashPass;
 import controller.UserController;
 import model.User;
 
@@ -20,7 +21,7 @@ public class AuthServletRegister extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String username = req.getParameter("username");
-        String password = req.getParameter("password");
+        String password = HashPass.hashPass(req.getParameter("password"));
         String email = req.getParameter("email");
         String age = req.getParameter("age");
         String gender = req.getParameter("gender");
