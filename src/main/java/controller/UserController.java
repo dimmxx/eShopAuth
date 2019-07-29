@@ -9,7 +9,6 @@ public class UserController {
     User user;
     DbWorker db;
 
-    private static final String CREATE_TABLE_POSTGESQL = "CREATE TABLE users_store (id serial PRIMARY KEY, username VARCHAR (50) UNIQUE NOT NULL, password VARCHAR (50) NOT NULL, email VARCHAR (50) UNIQUE, age INTEGER, gender VARCHAR (1), address VARCHAR(50), comment VARCHAR (100), agree INTEGER, role VARCHAR (10), created_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, last_login TIMESTAMP)";
     private final static String ADD_USER = "INSERT INTO users_store (username, password, email, age, gender, address, comment, agree, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private final static String GET_USER = "SELECT username, password, email, age, gender, address, comment, agree, role FROM users_store WHERE username= ? AND password= ?";
 

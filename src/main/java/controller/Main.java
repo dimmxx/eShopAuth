@@ -12,6 +12,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        DbWorkerUtils dbWorkerUtils = new DbWorkerUtils();
+        System.out.println(dbWorkerUtils.createTable());
+
 
 
 

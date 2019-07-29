@@ -10,11 +10,18 @@ public class DbWorker{
 //    static final String USER = "helen";
 //    static final String PASS = "123456";
 
-    private static final String JDBC_DRIVER = "org.postgresql.Driver";
-    private static final String DB_URL = "jdbc:postgresql://amazonpostgressql.c1mepymbmqks.us-east-2.rds.amazonaws.com:5432/testdb";
+//    private static final String JDBC_DRIVER = "org.postgresql.Driver";
+//    private static final String DB_URL = "jdbc:postgresql://amazonpostgressql.c1mepymbmqks.us-east-2.rds.amazonaws.com:5432/testdb";
+//
+//    private static final String USER = "master";
+//    private static final String PASS = "Revolution";
 
-    private static final String USER = "master";
-    private static final String PASS = "Revolution";
+    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    private static final String DB_URL = "jdbc:mysql://13.58.87.188:3306/eshopauth";
+
+    private static final String USER = "root";
+    private static final String PASS = "root";
+
 
     private Connection conn;
     private Statement st;
