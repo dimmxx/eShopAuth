@@ -1,7 +1,3 @@
-CREATE DATABASE eshopauth;
-USE eshopauth;
-
-
 CREATE TABLE `users_store`
 (
   `id` INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -83,6 +79,3 @@ UPDATE products
 SET
 description = 'Intel Core i5 2.6GHz Processor 8GB DDR3 - 500Gig SATA Hard Drive 12.5in HD LED Display (1366x768) Microsoft Windows 10 Professional (64-Bit)'
 WHERE id = 9;
-
-
-
