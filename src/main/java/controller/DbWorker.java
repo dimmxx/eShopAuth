@@ -17,10 +17,10 @@ public class DbWorker{
 //    private static final String PASS = "Revolution";
 
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://13.58.87.188:3306/eshopauth";
+    private static final String DB_URL = "jdbc:mysql://3.133.58.254:3306/eshopauth";
 
     private static final String USER = "root";
-    private static final String PASS = "root";
+    private static final String PASS = "remote";
 
 
     private Connection conn;
