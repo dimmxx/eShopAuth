@@ -1,27 +1,22 @@
 package controller;
 
+import service.ReadProperties;
+
 import java.sql.*;
 
 public class DbWorker{
 
-//    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-//    static final String DB_URL = "jdbc:mysql://s3.thehost.com.ua/itea2";
-//
-//    static final String USER = "helen";
-//    static final String PASS = "123456";
+    private static final String JDBC_DRIVER = ReadProperties.readProperties().getProperty("jdbc.driver");
+    private static final String DB_URL = ReadProperties.readProperties().getProperty("db.url")
+        + "/"
+        + ReadProperties.readProperties().getProperty("db.name");
+    private static final String USER = ReadProperties.readProperties().getProperty("db.user");
+    private static final String PASS = ReadProperties.readProperties().getProperty("db.password");
 
-//    private static final String JDBC_DRIVER = "org.postgresql.Driver";
-//    private static final String DB_URL = "jdbc:postgresql://amazonpostgressql.c1mepymbmqks.us-east-2.rds.amazonaws.com:5432/testdb";
-//
-//    private static final String USER = "master";
-//    private static final String PASS = "Revolution";
-
-    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://3.133.58.254:3306/eshopauth";
-
-    private static final String USER = "root";
-    private static final String PASS = "remote";
-
+//    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+//    private static final String DB_URL = "jdbc:mysql://3.133.58.254:3306/eshopauth?useSSL=false";
+//    private static final String USER = "root";
+//    private static final String PASS = "remote";
 
     private Connection conn;
     private Statement st;
@@ -35,6 +30,14 @@ public class DbWorker{
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            System.out.println(JDBC_DRIVER);
+            System.out.println(DB_URL);
+            System.out.println(USER);
+            System.out.println(PASS);
+
+
+
         } catch (SQLException ex) {
             // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
