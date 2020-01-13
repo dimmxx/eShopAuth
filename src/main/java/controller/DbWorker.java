@@ -3,15 +3,18 @@ package controller;
 import service.ReadProperties;
 
 import java.sql.*;
+import java.util.Properties;
 
 public class DbWorker{
 
-    private static final String JDBC_DRIVER = ReadProperties.readProperties().getProperty("jdbc.driver");
-    private static final String DB_URL = ReadProperties.readProperties().getProperty("db.url")
+    private static Properties properties = ReadProperties.readProperties();
+
+    private static final String JDBC_DRIVER = properties.getProperty("jdbc.driver");
+    private static final String DB_URL = properties.getProperty("db.url")
         + "/"
-        + ReadProperties.readProperties().getProperty("db.name");
-    private static final String USER = ReadProperties.readProperties().getProperty("db.user");
-    private static final String PASS = ReadProperties.readProperties().getProperty("db.password");
+        + properties.getProperty("db.name");
+    private static final String USER = properties.getProperty("db.user");
+    private static final String PASS = properties.getProperty("db.password");
 
 //    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 //    private static final String DB_URL = "jdbc:mysql://3.133.58.254:3306/eshopauth?useSSL=false";

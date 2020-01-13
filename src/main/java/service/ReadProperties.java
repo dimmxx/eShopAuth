@@ -12,9 +12,9 @@ public class ReadProperties {
     public static Properties readProperties() {
 
         InputStream inputStream =
-   DbWorker.class.getResourceAsStream("db.properties");
+   DbWorker.class.getResourceAsStream("src/main/resource/db.properties");
 
-        try (InputStream input = new FileInputStream("db.properties")) {
+        try (InputStream input = new FileInputStream("src/main/resource/db.properties")) {
             Properties properties = new Properties();
             properties.load(inputStream);
 
