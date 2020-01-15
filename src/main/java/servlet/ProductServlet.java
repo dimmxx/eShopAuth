@@ -17,8 +17,7 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        DbWorker db = new DbWorker();
+        DbWorker db = DbWorker.getDbworkerInstance();
         ProductController productController = new ProductController(db);
 
         List<Product> products = productController.getProductsFromDb(req.getParameter("category"));
@@ -27,9 +26,6 @@ public class ProductServlet extends HttpServlet {
 
         RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/view/product.jsp");
         rd.forward(req, resp);
-
-
-
     }
 
     @Override

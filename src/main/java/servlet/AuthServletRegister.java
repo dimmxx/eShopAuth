@@ -48,7 +48,7 @@ public class AuthServletRegister extends HttpServlet {
 
         if (errorMessage.length() == 0) {
 
-            DbWorker db = new DbWorker();
+            DbWorker db = DbWorker.getDbworkerInstance();
             UserController userController = new UserController(user, db);
             user.setRole("user");
             User temp = user;

@@ -40,18 +40,7 @@ public class AuthFilter implements Filter {
 
 //                resp.sendRedirect("loginForm.jsp");
             }
-
-
-
-
-
-
-
-
         }
-
-
-
     }
 
     @Override

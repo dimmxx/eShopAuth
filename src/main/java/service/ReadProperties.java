@@ -12,7 +12,7 @@ public class ReadProperties {
         try {
             System.out.println("enter readProperties");
 
-            InputStream input = new FileInputStream("src/main/resources/db.properties");
+            InputStream input = new FileInputStream("./WEB-INF/db.properties");
             Properties properties = new Properties();
             properties.load(input);
 
@@ -24,7 +24,6 @@ public class ReadProperties {
             System.out.println(properties.getProperty("db.password"));
 
             return properties;
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

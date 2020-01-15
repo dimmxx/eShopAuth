@@ -60,7 +60,7 @@ public class CartServletMulti extends HttpServlet {
         CartController cartController = new CartController(cart);
 
         if (productId != null && productQuantity != null) {
-            DbWorker db = new DbWorker();
+            DbWorker db = DbWorker.getDbworkerInstance();
             ProductController productController = new ProductController(db);
             Product product = productController.getProduct(Integer.valueOf(productId));
             cartController.addProductToCartMap(product, Integer.valueOf(productQuantity));

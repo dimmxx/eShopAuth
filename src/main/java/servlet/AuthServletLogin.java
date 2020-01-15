@@ -23,7 +23,7 @@ public class AuthServletLogin extends HttpServlet {
         HttpSession session = req.getSession();
         session.setMaxInactiveInterval(300);
 
-        DbWorker db = new DbWorker();
+        DbWorker db = DbWorker.getDbworkerInstance();
         User user = new User(username, password);
 
         UserController userController = new UserController(user, db);
