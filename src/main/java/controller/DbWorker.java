@@ -9,6 +9,17 @@ public class DbWorker{
 
     private static Properties properties = ReadProperties.readProperties();
 
+
+
+
+
+
+
+
+
+
+
+
     private static final String JDBC_DRIVER = properties.getProperty("jdbc.driver");
     private static final String DB_URL = properties.getProperty("db.url")
         + "/"

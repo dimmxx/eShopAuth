@@ -9,9 +9,6 @@ public class ReadProperties {
 
     public static Properties readProperties() {
 
-
-
-
         try {
             System.out.println("enter readProperties");
 
