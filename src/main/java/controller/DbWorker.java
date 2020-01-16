@@ -29,13 +29,6 @@ public class DbWorker{
         String USER = properties.getProperty("db.user");
         String PASS = properties.getProperty("db.password");
 
-
-
-//        String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-//        String DB_URL = "jdbc:mysql://3.133.58.254:3306/eshopauth?useSSL=false";
-//        String USER = "root";
-//        String PASS = "remote";
-
         try {
             Class.forName(JDBC_DRIVER).newInstance();
         } catch (Exception ex) {
