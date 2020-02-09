@@ -9,7 +9,7 @@ public class ReadProperties {
         try {
             InputStream input = new FileInputStream(System.getProperty("user.home") +
                     File.separator +
-                    ".eshopauth//db.properties");
+                    ".eshopauth/db.properties");
             Properties properties = new Properties();
             properties.load(input);
             return properties;
