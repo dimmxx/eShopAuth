@@ -13,7 +13,7 @@ public class ProductController {
     private final static String GET_PRODUCTS_ALL = "SELECT * FROM products";
     private final static String GET_PRODUCT = "SELECT * FROM products WHERE id=";
     private final static String GET_PRODUCTS_CATEGORY = "SELECT * FROM products WHERE category=";
-    private final static String CREATE_TABLE_POSTGESQL = "CREATE TABLE products (id serial PRIMARY KEY, name VARCHAR (50) NOT NULL, description VARCHAR (1000), price INTEGER, category INTEGER, image VARCHAR (1000))";
+    private final static String CREATE_TABLE_POSTGRESQL = "CREATE TABLE products (id serial PRIMARY KEY, name VARCHAR (50) NOT NULL, description VARCHAR (1000), price INTEGER, category INTEGER, image VARCHAR (1000))";
     private final static String ADD_PRODUCT = "INSERT INTO products (name, description, price, category, image) VALUES (?, ?, ?, ?, ?)";
 
     public ProductController(DbWorker db) {
@@ -52,7 +52,7 @@ public class ProductController {
     public boolean createTable() {
         Statement st = db.getStatement();
         try {
-            st.executeUpdate(CREATE_TABLE_POSTGESQL);
+            st.executeUpdate(CREATE_TABLE_POSTGRESQL);
             db.closeConnection();
             st.close();
             return true;
